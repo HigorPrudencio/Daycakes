@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cardápio - DayCakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="cardapio.css" />
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="topo">
+      <img src="fotos/daycakeslogo.png" alt="Logo DayCakes" class="logo">
+      <h1>DayCakes</h1>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span><span></span><span></span>
+      </div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="#">Encomendas</a>
+        <a href="#">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Grid de Produtos -->
+  <main class="produtos-container">
+    <h2>Cardápio</h2>
+    <div class="produtos-grid">
+      <div class="produto">
+        <img src="fotos/bolo1.jpg" alt="Bolo de Morango">
+        <h3>Bolo de Morango</h3>
+        <p>R$ ,90</p>
+      </div>
+      <div class="produto">
+        <img src="fotos/boloHigor.jpg" alt="Bolo">
+        <h3>Bolo G</h3>
+        <p>R$ 389,90</p>
+      </div>
+      <div class="produto">
+        <img src="fotos/brigadeiro.jpg" alt="kitDoces">
+        <h3>kit Brigadeiro</h3>
+        <p>R$ 30,90</p>
+      </div>
+      <!-- Adicione mais blocos conforme necessário -->
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 DayCakes | Todos os direitos reservados</p>
+    <p>
+      WhatsApp: (48) 98433-4215<br>
+      Instagram: <a href="https://instagram.com/daycakesdoceria" target="_blank">@daycakesdoceria</a>
+    </p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
