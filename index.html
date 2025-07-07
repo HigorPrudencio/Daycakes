@@ -13,15 +13,23 @@
   <!-- Preloader -->
   <div id="preloader">
     <div class="preloader-content">
-      <img src="fotos/daycakes logo .png" alt="Logo DayCakes" class="preloader-logo" />
+      <img src="fotos/daycakeslogo.png" alt="Logo DayCakes" class="preloader-logo" />
       <div class="spinner"></div>
     </div>
   </div>
 
   <header>
     <div class="topo">
-      <img src="fotos/daycakes logo .png" alt="Logo DayCakes" class="logo">
+      <img src="fotos/daycakeslogo.png" alt="Logo DayCakes" class="logo">
       <h1>DayCakes</h1>
+
+      <!-- Botão Hamburguer -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <nav>
         <a href="#">Início</a>
         <a href="#">Cardápio</a>
@@ -33,6 +41,7 @@
 
   <div class="banner"></div>
 
+  <!-- Seções (mantidas iguais) -->
   <section class="sobre">
     <div class="sobre-texto">
       <h2>Quem Somos</h2>
@@ -101,30 +110,36 @@
     </p>
   </footer>
 
+  <!-- Scripts -->
   <script>
     // Scroll reveal animation
     const reveals = document.querySelectorAll('.reveal-left, .reveal-right');
-
     function revealOnScroll() {
       for (const element of reveals) {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 100;
-
         if (elementTop < windowHeight - elementVisible) {
           element.classList.add("active");
         }
       }
     }
-
     window.addEventListener("scroll", revealOnScroll);
 
-    // Preloader com delay 2s
+    // Preloader
     window.addEventListener("load", () => {
       const preloader = document.getElementById('preloader');
       setTimeout(() => {
         preloader.classList.add('hide');
-      }, 2000); // 2 segundos
+      }, 1);
+    });
+
+    // Menu hamburguer
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      nav.classList.toggle('active');
     });
   </script>
 

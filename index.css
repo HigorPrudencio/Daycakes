@@ -8,7 +8,8 @@ body {
 
 header {
   background-color: #f5d2d0;
-  padding: 0;
+  padding: 10px 0; /* adiciona um pequeno espaçamento interno */
+  border-bottom: 1px solid #e0b4b4; 
 }
 
 .topo {
@@ -21,7 +22,9 @@ header {
 }
 
 .logo {
-  height: 200px;
+    max-height: 120px; /* restringe a altura */
+  width: auto;
+ 
 }
 
 h1 {
@@ -70,14 +73,22 @@ nav a:hover::after {
 
 /* Seções */
 section {
-  padding: 60px 20px;
+  padding:  5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  background-color: #ffffff;
+  gap: 60px;
+  background-color: #ffffff; /* cor de fundo do site */
+  margin-bottom: 110px;
+
+   
 }
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
 
 /* Textos e Títulos */
 .sobre-texto, .historia-texto {
@@ -121,10 +132,12 @@ section {
 
 /* Rodapé */
 footer {
-  background-color: #f5d2d0;
+   background-color: #f5d2d0;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
+   padding: 10px 0;  /* mesma altura interna vertical do header */
+  font-size: 14px;  /* ou 13px se quiser menor */
+  border-top: 1px solid #e0b4b4; /* borda no topo para combinar com header */
+   margin-top: 60px;
 }
 
 footer a {
@@ -198,6 +211,63 @@ footer a:hover {
   animation: spin 1.2s linear infinite;
 }
 
+/* Botão Hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
+
+.menu-toggle span {
+  height: 3px;
+  background-color: #4d2c2c;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Efeito X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -10px);
+}
+
+/* Estilo do menu mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    margin-top: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    width: 100%;
+  }
+
+  nav.active {
+    max-height: 500px;
+  }
+
+  nav a {
+    padding: 15px 0;
+    text-align: center;
+  }
+}
+
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -210,10 +280,7 @@ footer a:hover {
     text-align: center;
   }
 
-  .logo {
-    height: 120px;
-    margin-bottom: 10px;
-  }
+
 
   h1 {
     font-size: 28px;
@@ -255,10 +322,15 @@ footer a:hover {
   .fotoday {
     max-width: 90%;
     height: auto;
+    margin-bottom: 30px;
   }
 
   footer {
     font-size: 13px;
   }
+   .inicio {
+    flex-direction: column-reverse;
+  }
+
 }
 
