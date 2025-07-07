@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DayCakes</title>
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <img src="fotos/daycakes logo .png" alt="Logo DayCakes" class="preloader-logo" />
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="topo">
+      <img src="fotos/daycakes logo .png" alt="Logo DayCakes" class="logo">
+      <h1>DayCakes</h1>
+      <nav>
+        <a href="#">Início</a>
+        <a href="#">Cardápio</a>
+        <a href="#">Encomendas</a>
+        <a href="#">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="banner"></div>
+
+  <section class="sobre">
+    <div class="sobre-texto">
+      <h2>Quem Somos</h2>
+      <p>
+        Olá! Sou <strong>Dayana Kelly</strong>, formada em gastronomia, apaixonada e especializada em confeitaria há mais de 14 anos.<br><br>
+        Produzo bolos e doces de forma artesanal e com excelentes produtos de qualidade.<br>
+        Nossas decorações são criadas e personalizadas com muito amor e carinho pra deixar tudo do seu jeito.
+      </p>
+      <p>
+        São mais de 1.000 sonhos e momentos realizados na forma de amor. Essa é a sua oportunidade: comemore e presenteie sua vida.
+      </p>
+      <p><strong>Com carinho, Day</strong></p>
+    </div>
+    <div class="sobre-imagem">
+      <img src="fotos/imagemday.png.jpg" alt="Dayana Kelly apresentando cardápio" class="fotoday">
+    </div>
+  </section>
+
+  <section class="minha-historia reveal-right">
+    <div class="historia-texto">
+      <h2>Minha História</h2>
+      <p>
+        Há 12 anos, descobri minha paixão pela confeitaria. Sempre gostei de fazer doces para as festas em família, e isso era meu hobby, enquanto eu ainda trabalhava com artesanato e bordados. Foi então que fiz meu primeiro curso de trufas e pão de mel, e percebi que aquilo era o que eu realmente amava fazer.
+      </p>
+      <p>
+        A partir desse primeiro curso, busquei aprender cada vez mais, fazendo muitos outros cursos, workshops e também a Escola Profissional de Panificação e Confeitaria. Estudei e pratiquei diversas receitas, me dedicando a aprender diferentes tipos de bolos, trufas, pães de mel, bolos no pote, brigadeiros, sobremesas e bolos decorados com papel de arroz e chantilly.
+      </p>
+    </div>
+    <div class="historia-imagem">
+      <img src="fotos/minhahistoria.jpg" alt="Minha história" class="fotoday">
+    </div>
+  </section>
+
+  <section class="inicio reveal-left">
+    <div class="historia-imagem">
+      <img src="fotos/comecoday.jpg" alt="Começo" class="fotoday">
+    </div>
+    <div class="historia-texto">
+      <h2>Começo</h2>
+      <p>
+        Comecei vendendo para amigos e colegas de trabalho, como uma forma de ter uma renda extra, e aos poucos fui percebendo que queria transformar essa paixão em um negócio de verdade. Cada pedido me motivava a me aperfeiçoar, e cada doce entregue me trazia alegria, vendo as pessoas felizes ao receberem algo feito com tanto carinho.
+      </p>
+      <p>
+        Em 2019, realizei meu sonho de me formar em Gastronomia, com direito a colação e baile, marcando um momento muito especial na minha vida. Logo depois, decidi me especializar em bolos decorados e personalizados, realizando cursos importantes como a formação de Boleiras com a Devilin Silva, o que fez meus bolos evoluírem cada vez mais.
+      </p>
+    </div>
+  </section>
+
+  <section class="cereja reveal-right">
+    <div class="historia-texto">
+      <h2>Cereja do Bolo</h2>
+      <p>
+        O que considero a “cereja do bolo” foi realizar o meu sonho de fazer bolos de andar e de casamento com perfeição, buscando sempre trazer o melhor para cada cliente. Para profissionalizar ainda mais meu trabalho, entrei em grupos de mulheres empreendedoras, aprendi sobre gestão, marketing e networking, e comecei a divulgar a Day Cakes Doceria, para que mais pessoas possam adoçar a vida com os nossos doces, feitos sempre com amor, cuidado e dedicação.
+      </p>
+    </div>
+    <div class="historia-imagem">
+      <img src="fotos/cerejadobolo.jpg" alt="Cereja do Bolo" class="fotoday">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 DayCakes | Todos os direitos reservados</p>
+    <p>
+      WhatsApp: (48) 98433-4215<br>
+      Instagram: <a href="https://instagram.com/daycakesdoceria" target="_blank">@daycakesdoceria</a>
+    </p>
+  </footer>
+
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal-left, .reveal-right');
+
+    function revealOnScroll() {
+      for (const element of reveals) {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+          element.classList.add("active");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+
+    // Preloader com delay 2s
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => {
+        preloader.classList.add('hide');
+      }, 2000); // 2 segundos
+    });
+  </script>
+
+</body>
+</html>
